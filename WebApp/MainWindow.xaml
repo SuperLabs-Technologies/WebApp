@@ -1,0 +1,20 @@
+<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WebApp" xmlns:Wpf="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf" x:Class="WebApp.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" MinWidth="906" MinHeight="376" Height="400" Width="700" WindowStyle="None" Background="#01000000" AllowsTransparency="True">
+    <WindowChrome.WindowChrome>
+        <WindowChrome 
+            CaptionHeight="0"
+            ResizeBorderThickness="5"/>
+
+    </WindowChrome.WindowChrome>
+    <Grid Focusable="True">
+        <Border x:Name="Renderbox" Background="#01000000">
+            <Wpf:WebView2 x:Name="WebRenderer" Margin="5,5,5,5"/>
+        </Border>
+    </Grid>
+</Window>

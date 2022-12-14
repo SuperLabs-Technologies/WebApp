@@ -1,0 +1,51 @@
+<html>
+	<head>
+		<title>WebApp - My project</title>
+		<link rel="icon" href="https://media.discordapp.net/attachments/671694363235057675/1052324803496902706/image.png">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<Window width="900" height="550">
+
+			<!-- Write your code here -->
+			<!-- You may remove the sample code -->
+			<div class="webapp-container">
+				<img class="webapp-image" src="https://media.discordapp.net/attachments/671694363235057675/1052324803496902706/image.png" alt="">
+				<div class="webapp-text">Edit&nbsp;<p class="webapp-text-highlight">index.html</p>&nbsp;and hit Ctrl + R to begin</div>
+				<a class="webapp-link" target="_blank" href="https://github.com/SuperLabs-Technologies/WebApp">Learn WebApp</a>
+
+				<hr class="webapp-divider">
+
+				<button class="webapp-button">Try me</button>
+			</div>
+		</Window>
+		<script>
+				document.querySelector(".webapp-button").addEventListener("click", function() {
+					window.chrome.webview.postMessage(JSON.stringify({
+						id: "buttonElement",
+						eventName: "click",
+						message: "Hello, from WebApp!"
+					}));
+				});
+		</script>
+
+		<!-- DONT REMOVE - Display warning if browser does not meet requirements -->
+			<div class="webapp-warning-background" onload="webAppSupported()">
+				<div class="webapp-warning">
+					Your browser does not support 'window.chrome.webview.postMessage()', Please consider launching this app with WebApp.
+				</div>
+			</div>
+
+			<script>
+					var releaseEnabled = true;
+
+					if(!window.chrome.webview && releaseEnabled) {
+						document.getElementsByClassName('webapp-warning-background')[0].style.display = "fixed";
+					}
+					else{
+						document.getElementsByClassName('webapp-warning-background')[0].style.display = "none";
+					}
+			</script>
+		<!-- End of component -->
+	</body>
+</html>
